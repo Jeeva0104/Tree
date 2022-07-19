@@ -25,4 +25,5 @@ root.left.left = new Node(4);
 root.left.right = new Node(5);
 root.right.left = new Node(6);
 root.right.right = new Node(7);
+// root.right.left.left = new Node(8);
 console.log(depth(root))  // o/p 3
