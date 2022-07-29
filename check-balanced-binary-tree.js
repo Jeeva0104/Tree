@@ -19,21 +19,13 @@ const checkBalanceBinaryTree = (node) => {
 
     const lHeight = checkBalanceBinaryTree(node.left);
     const rHeight = checkBalanceBinaryTree(node.right);
-    // console.log(node.data, 'node')
-    if (Math.abs(lHeight - rHeight) > 1) {
-        console.log("Not Balanced")
-    }
-    if (lHeight > rHeight) {
-        return lHeight + 1
-    } else {
-        return rHeight + 1
-    }
+    if (Math.abs(lHeight - rHeight) > 1) return -1
+    return 1 + Math.max(lHeight, rHeight)
 }
 
 const root = new Node(1);
 root.left = new Node(2);
 root.right = new Node(3);
-root.right.left = new Node(4)
-root.right.right = new Node(5);
-root.right.left.left = new Node(6)
-checkBalanceBinaryTree(root)
+root.left.left = new Node(4)
+root.right.right = new Node(5)
+console.log(checkBalanceBinaryTree(root))
